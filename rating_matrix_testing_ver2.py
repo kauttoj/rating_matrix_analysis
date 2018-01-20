@@ -128,7 +128,7 @@ algo_baseline = BaselineOnly(reg_u=0,reg_i=0)
 algo_baseline.train(data_full)
 best_item_est = algo_baseline.trainset._global_mean + np.mean(algo_baseline.bu) + algo_baseline.bi
 
-algo_SVD = SVD(verbose=True,n_factors = 5,n_epochs=50,reg_bu=0,reg_bi=0,reg_pu=0.1,reg_qi=0.1, biased=True)
+algo_SVD = NMF(verbose=True,n_factors = 5,n_epochs=50,reg_bu=0,reg_bi=0,reg_pu=0.1,reg_qi=0.1, biased=True)
 algo_SVD.train(data_full)
 best_item_est_svd = algo_SVD.trainset._global_mean + np.mean(algo_SVD.bu) + algo_SVD.bi
 
